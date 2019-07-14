@@ -48,6 +48,10 @@ a:hover {
     outline: 0
 }
 
+a:link {color: #aaaaaa} /* 未访问的链接 */
+a:visited {color: #aaaaaa} /* 已访问的链接 */
+a:active {color: #ff0006} /* 被选择的链接 */
+
 h1 {
     font-size: 2em;
     margin: .67em 0
@@ -1139,20 +1143,22 @@ table {
     border-bottom: 1px solid rgba(0, 0, 0, .07);
     border-top: 1px solid rgba(0, 0, 0, .07);
     margin-bottom: 10px;
-    margin-top: -1px
+    margin-top: -1px;
+    position:relative;
 }
 
 #book-search-input input,
 #book-search-input input:focus,
 #book-search-input input:hover {
-    width: 100%;
     background: 0 0;
     border: 1px solid transparent;
     box-shadow: none;
     outline: 0;
     line-height: 22px;
     padding: 7px 7px;
-    color: inherit
+    color: inherit;
+    width:95%;
+    float:right;
 }
 
 #book-search-results {
@@ -1596,7 +1602,12 @@ body {
 }
 
 /*搜索*/
-.book-search-results .search-results .no-results {
+#search_i{
+    position:absolute;
+    left:7px;
+    top:15px;
+}
+.search-results, .no-results {
     display: none;
 }
 .book-search-results.open .search-results {
@@ -1661,4 +1672,41 @@ body {
 }
 .mark_keyword{
     background: yellow !important;
+}
+/*右侧本章导航*/
+.right-menu{
+    width: 230px;
+    position: fixed;
+    right: 15px;
+    top:50px;
+    min-height: 1px;
+    z-index: 99;
+    border: 1px solid #EEEEEE;
+    border-radius: 3px;
+    border-top-left-radius: 0px;
+    background-color: #fff;
+    padding: 10px;
+}
+.right-menu > .title {
+    color: #aaaaaa;
+    background-color: #fff;
+    width: 100%;
+    right: 15px;
+    padding-left: 0.1em;
+    line-height: 200%;
+    border-bottom: 1px solid #EEEEEE;
+}
+@media (max-width: 600px) {
+    .right-menu {
+        display:none;
+    }
+}
+
+.right-menu > li{
+    list-style-type: none;
+    padding-left:5px;
+    padding-top: 5px;
+}
+.right-menu > li > a.active{
+    color:#ff0006;
 }
