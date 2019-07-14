@@ -12,7 +12,7 @@ The `Response` implements the `singleton pattern` in the `EasySwoole`.
 It's created automatically since a HTTP client's request is received and destroyed automatically till the end of the process. 
 The Request object fully conforms to all the specifications in [PSR7].
 
-Other details, interested students can view the corresponding code in the IDE.
+Other details, interested users can view the corresponding code in your IDE.
 
 ## Methods List
 ### write()

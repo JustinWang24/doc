@@ -24,7 +24,7 @@ protected function hookThrowable(\Throwable $throwable,Request $request,Response
     }
 }
 ```
-The onException method can be rewritten directly in the controller:
+The `onException` method can be rewritten directly in the controller:
 
 ```php
 <?php
@@ -51,10 +51,11 @@ class Base extends ViewController
     {
         var_dump($throwable->getMessage());
     }
-/**
- * @override
- * @param null|string $action
- */
+    
+    /**
+     * @override
+     * @param null|string $action
+     */
     protected function actionNotFound(?string $action): void
     {
         $this->response()->withStatus(Status::CODE_NOT_FOUND);

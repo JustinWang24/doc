@@ -146,7 +146,7 @@ Add the following code to `App\HttpController\Router.php` to turn on global mode
 ```php
 $this->setGlobalMode(true);
 ```
-When the global mode interception is on, the routing will only match the response of the controller method in Router.php, and the default parsing of the framework will not be performed.
+When the global mode interception is on, the routing will only match the response of the controller method in `Router.php`, and the default parsing of the framework will not be performed.
 
 ### Exception error handling
 The following 2 examples show how to set callback function for the `MethodNotAllow` and the `RouterNotFound` in `App\HttpController\Router.php`:

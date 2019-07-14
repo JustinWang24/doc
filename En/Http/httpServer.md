@@ -7,7 +7,7 @@
 ---<head>---
 
 # Http Server
-When you set the `SERVER_TYPE` to `EASYSWOOLE_WEB_SERVER` in your basic configurations file (`dev` or `produce.php`), then your application will be running as a HTTP server.
+When you set the `SERVER_TYPE` to `EASYSWOOLE_WEB_SERVER` in your basic configurations file (`dev.php` or `produce.php`), then your application will be running as a HTTP server.
 In HTTP server mode, the following modules are out of box:
 * Controllers pool
 * URL parser
@@ -36,7 +36,7 @@ composer update
 ````
 
 ## The default controller
-Once you installed `EasySwoole` from work, the default controller would have created for you in `App/HttpController/Index.php`:
+Once you installed `EasySwoole` framework, the default controller would have created for you in `App/HttpController/Index.php`:
 ````php
 <?php
 namespace App\HttpController;

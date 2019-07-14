@@ -136,7 +136,7 @@ function onException(\Throwable $throwable): void
 
 protected function gc()
 {
-    // TODO: Implement gc() method.
+    // Implement gc() method.
     if ($this->session instanceof SessionDriver) {
         $this->session->writeClose();
         $this->session = null;
@@ -147,40 +147,41 @@ protected function gc()
     }
 }
 ```
+
 The `gc` method will be called automatically after execution of `action` and `afterAction`.
 You shall reset the controller properties to the default values and close `session`, 
 or other `garbage collection` logic could be implemented as you wish.
 
 ### Request and Response
  * request method
-After the `request()` method is called, the `EasySwoole\HttpRequest'object is returned.
-This object comes with all the data from the client, such as:
+After the `request()` method is called, the `EasySwoole\HttpRequest` object is returned.
+This object comes with all the data from the client, for example:
+
 ```php
 <?php
-
-function index()
-{
-    $request = $this->request();    // Retrieve the request object
-    $request->getRequestParam();    // Get post/get data, get overrides post
-    $request->getMethod();          // Get the request mode (post/get/)
-    $request->getCookieParams();    // Get cookie parameters
-}
+    function index()
+    {
+        $request = $this->request();    // Retrieve the request object
+        $request->getRequestParam();    // Get post/get data, get overrides post
+        $request->getMethod();          // Get the request mode (post/get/)
+        $request->getCookieParams();    // Get cookie parameters
+    }
 ```
+
 > More details about `Request`, please go to [request object](request.md)
 
  * response method 
 The `response()` method returns an instance of `EasySwoole\Http\Response` class for sending response data to the client, such as:
 
 ```php
-<?php 
-
-function index()
-{
-    $response = $this->response();  // Retrieve the response object
-    $response->withStatus(200);    // Mandatory field: the response status code
-    $response->setCookie('name','value',time()+86400,'/'); // Setting up a cookie
-    $response->write('hello world');    // Send a piece of data to the client (echo similar to regular web mode)
-}
+<?php
+    function index()
+    {
+        $response = $this->response();  // Retrieve the response object
+        $response->withStatus(200);    // Mandatory field: the response status code
+        $response->setCookie('name','value',time()+86400,'/'); // Setting up a cookie
+        $response->write('hello world');    // Send a piece of data to the client (echo similar to regular web mode)
+    }
 ```
 > More details about `Response`, please go to [response object](response.md)
 
@@ -202,7 +203,7 @@ The Output:
  * json  
 Resolving JSON strings using `json_decode`
  * xml  
- Parsing XML strings using simplexml_load_string
+ Parsing XML strings using `simplexml_load_string`
 
  
 ### Session
@@ -242,4 +243,3 @@ function index()
 }
 ````
 > More details about `Validate`, please go to [validate](../Components/validate.md)
- 

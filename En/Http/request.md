@@ -18,7 +18,7 @@ Used to obtain all parameters which submitted by the HTTP client through POST or
 For example：
 ```php
 // Request object can be obtained in the controller by $this->request().
-// $request = $this->request()；
+$request = $this->request()；
 
 $data = $request->getRequestParam();
 var_dump($data);
@@ -54,7 +54,7 @@ $img_file = $request->getUploadedFile('img');
 $data = $request->getUploadedFiles();
 var_dump($data);
 ```
-Click view[UploadFile object](./UploadFile.html)
+More details in [UploadFile object](./UploadFile.html)
 
 ### getBody()
 This method is used to obtain the original data submitted by POST in non-form-data or x-www-form-urlenceded encoding format, 
